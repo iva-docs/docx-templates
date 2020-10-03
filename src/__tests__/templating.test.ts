@@ -1097,6 +1097,22 @@ Morbi dignissim consequat ex, non finibus est faucibus sodales. Integer sed just
         );
         expect(result.includes('enigrebua')).toBeTruthy(); // the word aubergine in reverse
       });
+
+      it('IF and FOR on the same line (issue #154)', async () => {
+        const template = await fs.promises.readFile(
+          path.join(__dirname, 'fixtures', 'ifForOnSameLine.docx')
+        );
+
+        const result = await createReport({
+          noSandbox,
+          template,
+          data: {
+            list: ['a', 'b', 'c'],
+          },
+        });
+
+        expect(result).toBeInstanceOf(Uint8Array);
+      });
     });
   });
 });
