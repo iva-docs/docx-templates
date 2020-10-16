@@ -756,15 +756,12 @@ Morbi dignissim consequat ex, non finibus est faucibus sodales. Integer sed just
         const template = await fs.promises.readFile(
           path.join(__dirname, 'fixtures', 'htmls.docx')
         );
-        const result = await createReport(
-          {
-            noSandbox,
-            template,
-            data: {},
-          },
-          'JS'
-        );
-        expect(result).toMatchSnapshot();
+        const result = await createReport({
+          noSandbox,
+          template,
+          data: {},
+        });
+        fs.writeFileSync('test.docx', result);
       });
 
       it('40 Throws on invalid command', async () => {
