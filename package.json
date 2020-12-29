@@ -1,7 +1,7 @@
 {
-  "name": "docx-templates",
-  "version": "4.5.3",
-  "description": "Template-based docx report creation",
+  "name": "docx-templates-iva-docs",
+  "version": "4.6.0-beta",
+  "description": "Forked from docx-templates with changes to fit Iva",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "author": "Guillermo Grau Panea",
